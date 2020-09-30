@@ -7,7 +7,7 @@ count=`curl -s -X GET "https://eval.contrastsecurity.com/Contrast/api/ng/${ORG_I
         -H "Authorization: dHVyYm91QGkuc29mdGJhbmsuanA6MTJNSlRJNkVOMjQ0Wlk5Qw==" \
         -H "API-Key: EFhK6pIuD6mh5RX6YQ2iMOOavh9Mc52u" \
         | jq '[.traces[]] | length'`
-echo $count
+echo $count,${APP_VERSION}
 if [ $count -gt 0 ]; then
   exit 1
 fi
